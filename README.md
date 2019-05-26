@@ -66,6 +66,6 @@ npm run build
 npm run build -- -w
 ```
 
-[GreasyFork]: TBD
+[GreasyFork]: https://greasyfork.org/en/scripts/383557-lobster-keys
 [TamperMonkey]: https://www.tampermonkey.net/
 [userscript]: https://en.wikipedia.org/wiki/Userscript
