@@ -1,0 +1,31 @@
+{
+  "name": "@rodaine/lobster-keys",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Keybindings for lobste.rs",
+  "author": "Chris Roche <github@rodaine.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rodaine/lobster-keys.git"
+  },
+  "files": [
+    "dist/"
+  ],
+  "main": "dist/lobster-keys.js",
+  "scripts": {
+    "test": "eslint --ext .ts ./src",
+    "build": "webpack --config webpack.config.js"
+  },
+  "devDependencies": {
+    "ts-loader": "^5.4.5",
+    "typescript": "^3.4.5",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "eslint": "^5.16.0"
+  }
+}
