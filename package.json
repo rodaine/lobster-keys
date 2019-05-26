@@ -14,7 +14,7 @@
   ],
   "main": "dist/lobster-keys.js",
   "scripts": {
-    "test": "eslint --ext .ts ./src",
+    "test": "eslint --ext .ts -c ./.eslintrc.js ./src",
     "build": "webpack --config webpack.config.js"
   },
   "devDependencies": {
