@@ -66,9 +66,9 @@ class Story {
      * @param d Document
      */
     public static FromDoc(d: Document = window.document): Story[] {
-        let els = d.getElementsByClassName('story')
-        let out = []
-        for (let el of els) {
+        const els = d.getElementsByClassName('story')
+        const out = []
+        for (const el of els) {
             out.push(new Story(el))
         }
 
@@ -86,7 +86,7 @@ class Story {
      */
     public focus(): void {
         this._el.classList.add(Story.focusCls);
-        let url = this.getAnchor(StoryAnchorSelector.URL);
+        const url = this.getAnchor(StoryAnchorSelector.URL);
         if (url) {
             url.focus();
             url.blur();
@@ -121,7 +121,7 @@ class Story {
      */
     public flag(): void {
         this.click(StoryAnchorSelector.Flag);
-        let opts: HTMLAnchorElement | null = window.document.querySelector('#downvote_why a');
+        const opts: HTMLAnchorElement | null = window.document.querySelector('#downvote_why a');
         opts && opts.focus();
     }
 
@@ -150,12 +150,12 @@ class Story {
     }
 
     private click(a: StoryAnchorSelector): void {
-        let anchor = this.getAnchor(a);
+        const anchor = this.getAnchor(a);
         anchor && anchor.click();
     }
 
     private scrollIntoView(): void {
-        let bound = this._el.getBoundingClientRect();
+        const bound = this._el.getBoundingClientRect();
 
         if (bound.top < 0
             || bound.left < 0
@@ -206,7 +206,7 @@ class LobstersKeyController {
     }
 
     private get story(): Story | undefined {
-        let i = this.index;
+        const i = this.index;
         return i === undefined ? undefined : this.stories[i];
     }
 
@@ -238,11 +238,11 @@ class LobstersKeyController {
     private changePage(d: Direction): void {
         switch (d) {
             case Direction.Previous:
-                let prev: HTMLAnchorElement | null = window.document.querySelector('.morelink a:first-child');
+                const prev: HTMLAnchorElement | null = window.document.querySelector('.morelink a:first-child');
                 prev && prev.innerText.indexOf('<<') > -1 && prev.click();
                 break;
             case Direction.Next:
-                let next: HTMLAnchorElement | null = window.document.querySelector('.morelink a:last-child');
+                const next: HTMLAnchorElement | null = window.document.querySelector('.morelink a:last-child');
                 next && next.innerText.indexOf('>>') > -1 && next.click();
                 break;
         }
@@ -260,7 +260,7 @@ class LobstersKeyController {
                 return this.changePage(Direction.Next);
         }
 
-        let story = this.story;
+        const story = this.story;
         if (story) {
             switch (e.code as Key) {
                 case Key.Enter:
@@ -284,7 +284,7 @@ class LobstersKeyController {
     }
 
     private attachStyles(d: Document): void {
-        let styles = d.createElement('style');
+        const styles = d.createElement('style');
         styles.innerHTML = `.${Story.focusCls} { background-color: #fffcd799; }`;
         d.body.appendChild(styles);
     }
